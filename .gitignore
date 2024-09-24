@@ -1,0 +1,26 @@
+# Compilation files
+*.o
+*.out
+*.exe
+
+# IDE configuration folders
+.vscode/
+.idea/
+.vs/
+
+# Temporary files or logs
+*.log
+*.tmp
+
+# Build folders
+/build/
+/Debug/
+/Release/
+
+# Library files
+*.lib
+*.dll
+
+# Internal management files and folders
+FFTW_CPP/
+*.xlsx

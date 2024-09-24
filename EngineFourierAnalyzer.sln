@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineFourierAnalyzer", "EngineFourierAnalyzer.vcxproj", "{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}.Debug|x64.ActiveCfg = Debug|x64
+		{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}.Debug|x64.Build.0 = Debug|x64
+		{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}.Debug|x86.ActiveCfg = Debug|Win32
+		{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}.Debug|x86.Build.0 = Debug|Win32
+		{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}.Release|x64.ActiveCfg = Release|x64
+		{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}.Release|x64.Build.0 = Release|x64
+		{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}.Release|x86.ActiveCfg = Release|Win32
+		{A73380BA-E80B-4BAB-AB00-03AE4BAB3CAE}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {833BEC1E-6E86-4A5F-8E4F-114605820E45}
+	EndGlobalSection
+EndGlobal
