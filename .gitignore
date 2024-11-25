@@ -2,6 +2,7 @@
 *.o
 *.out
 *.exe
+*.pdb
 
 # IDE configuration folders
 .vscode/
@@ -14,8 +15,8 @@
 
 # Build folders
 /build/
-/Debug/
 /Release/
+/EngineFo.a73380ba/
 
 # Library files
 *.lib
@@ -24,3 +25,4 @@
 # Internal management files and folders
 FFTW_CPP/
 *.xlsx
+*.txt
