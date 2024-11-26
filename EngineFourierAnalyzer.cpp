@@ -7,11 +7,11 @@
 int main() {
     // Parameters for the sine wave
     const int N = 1<<14;             // Number of samples
-    const double PI = 3.14159265358979323846;
+    const double pi = 3.14159265358979323846;
     const double amplitude = 1.0;  // Amplitude of the sine wave
-    const double frequency = 100.0;  // Frequency in Hz (cycles per sample)
+    const double frequency = 4000.0;  // Frequency in Hz (cycles per sample)
     const double phase = 0.0;      // Phase in radians
-    const double samplingRate = pow(2,12); // Sampling rate (samples per unit time)
+    const double samplingRate = pow(2,17); // Sampling rate (samples per unit time)
 
     // FFTW input and output arrays
     fftw_complex in[N], out[N];
@@ -21,7 +21,7 @@ int main() {
     double dt = 1.0 / samplingRate; // Time step between samples
     for (int i = 0; i < N; i++) {
         double t = i * dt;         // Current time
-        in[i][0] = amplitude * std::sin(2 * PI * frequency * t + phase) * (amplitude / 2) * std::sin(2 * PI * (frequency / 2) * t + phase); // Real part
+        in[i][0] = amplitude * std::sin(2 * pi * frequency * t + phase); // Real part
         in[i][1] = 0;              // Imaginary part is 0
     }
 
@@ -31,7 +31,7 @@ int main() {
     // Save the sine wave and FFT output to a file
     std::ofstream file("fft_data.txt");
     if (file.is_open()) {
-        file << "# Index\tFrequency (Hz)\tInput\t\tFFT Real\tFFT Imaginary\n";
+        file << "# Index\tFrequency (Hz)\tInput\tFFT Real\tFFT Imaginary\n";
         for (int i = 0; i < N; i++) {
             double freq = (i <= N / 2) ? (i * samplingRate / N) : ((i - N) * samplingRate / N);
             file << i << "\t" << freq << "\t" << in[i][0] << "\t" << out[i][0] << "\t" << out[i][1] << "\n";
