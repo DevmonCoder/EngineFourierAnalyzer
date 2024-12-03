@@ -10,8 +10,8 @@ private:
     std::vector<int> samples;
     std::vector<double> time;
     std::vector<double> values;
-    std::vector<double> refftw;
-    std::vector<double> imfftw;
+    std::vector<double> magnitude;
+    std::vector<double> positiveFrequencies;
 
 public:
     // Constructor
@@ -20,7 +20,7 @@ public:
     // Method to save data
     void saveData(const std::vector<int>& samples,
         const std::vector<double>& time, const std::vector<double>& values,
-        const std::vector<double>& refftw, const std::vector<double>& imfftw) const;
+        const std::vector<double>& magnitude, const std::vector<double>& positiveFrequencies) const;
 };
 
 #endif // FILEGENERATOR_H

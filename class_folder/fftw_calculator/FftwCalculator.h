@@ -6,15 +6,15 @@
 class FftwCalculator {
 private:
     int n;
-    std::vector<double> values;
-    std::vector<double> reOut; // Real part of the FFT
-    std::vector<double> imOut; // Imaginary part of the FFT
+    std::vector<double> values; // Input signal values
+    std::vector<double> magnitudes; // Magnitudes of the FFT
+    std::vector<double> positiveFrequencies; // Frequencies of the FFT
 
 public:
     FftwCalculator(int n, const std::vector<double>& values);
     void calculate();
-    const std::vector<double>& getReOut() const;
-    const std::vector<double>& getImOut() const;
+    const std::vector<double>& getMagnitudes() const;
+    const std::vector<double>& getFrequencies() const;
 };
 
 #endif // FFTWCALCULATOR_H
