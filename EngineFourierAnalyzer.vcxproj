@@ -77,7 +77,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 	  <!-- Here you add the path to the FFTW headers -->
-	  <AdditionalIncludeDirectories>C:\Users\CODER\_CPP\EngineFourierAnalyzer\FFTW_CPP\fftw-3.3.5-dll32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+	  <AdditionalIncludeDirectories>C:\Users\CODER\_CPP\EngineFourierAnalyzer\FFTW_CPP\fftw-3.3.5-dll32;class_folder\signal_generator;class_folder\fftw_calculator;class_folder\file_generator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -95,7 +95,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 	  <!-- Here you add the path to the FFTW headers -->
-	  <AdditionalIncludeDirectories>C:\Users\CODER\_CPP\EngineFourierAnalyzer\FFTW_CPP\fftw-3.3.5-dll32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+	  <AdditionalIncludeDirectories>C:\Users\CODER\_CPP\EngineFourierAnalyzer\FFTW_CPP\fftw-3.3.5-dll32;class_folder\signal_generator;class_folder\fftw_calculator;class_folder\file_generator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,7 +113,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 	  <!-- Here you add the path to the FFTW headers -->
-	  <AdditionalIncludeDirectories>C:\Users\CODER\_CPP\EngineFourierAnalyzer\FFTW_CPP\fftw-3.3.5-dll64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+	  <AdditionalIncludeDirectories>C:\Users\CODER\_CPP\EngineFourierAnalyzer\FFTW_CPP\fftw-3.3.5-dll64;class_folder\signal_generator;class_folder\fftw_calculator;class_folder\file_generator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,7 +131,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 	  <!-- Here you add the path to the FFTW headers -->
-	  <AdditionalIncludeDirectories>C:\Users\CODER\_CPP\EngineFourierAnalyzer\FFTW_CPP\fftw-3.3.5-dll64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>	
+	  <AdditionalIncludeDirectories>C:\Users\CODER\_CPP\EngineFourierAnalyzer\FFTW_CPP\fftw-3.3.5-dll64;class_folder\signal_generator;class_folder\fftw_calculator;class_folder\file_generator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>	
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,6 +144,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EngineFourierAnalyzer.cpp" />
+    <ClCompile Include="class_folder\signal_generator\SignalGenerator.cpp" />
+    <ClCompile Include="class_folder\fftw_calculator\FftwCalculator.cpp" />
+    <ClCompile Include="class_folder\file_generator\fileGenerator.cpp" />    
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

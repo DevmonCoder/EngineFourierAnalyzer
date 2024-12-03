@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 # Load the data
 data = np.loadtxt("C:/Users/CODER/_CPP/EngineFourierAnalyzer/Debug/fft_data.txt", skiprows=1)  # Skip the header row
 indices = data[:, 0]  # Index column
-frequencies = data[:, 1]  # Frequency column
+time = data[:, 1]  # Time column
 input_signal = data[:, 2]  # Input values
-fft_real = data[:, 3]  # Real part of FFT
-fft_imag = data[:, 4]  # Imaginary part of FFT
+frequencies = data[:, 3]  # Frequency column
+fft_real = data[:, 4]  # Real part of FFT
+fft_imag = data[:, 5]  # Imaginary part of FFT
 
 samplingRate = pow(2,3)
 
@@ -30,7 +31,7 @@ print("\nFrecuencia de muestreo / Frecuencia de la senal = ", samplingRate/funda
 # Plot the input signal with a continuous line only
 plt.figure(figsize=(12, 6))
 plt.subplot(2, 1, 1)
-plt.plot(indices/samplingRate, input_signal, color='red', linewidth=1.5, label="Input Signal")  # Continuous line
+plt.plot(time, input_signal, color='red', linewidth=1.5, label="Input Signal")  # Continuous line
 plt.axhline(0, color='black', linewidth=1, linestyle='-')  # Horizontal line at y=0
 plt.title("Input Signal")
 plt.xlabel("Time (s)")
@@ -38,7 +39,7 @@ plt.ylabel("Amplitude (mm)")
 plt.grid()  # Add a grid for better visualisation
 
 # Set x-axis limits to show only two cycles
-plt.xlim(0, 2*T)  # Show two cycles of the signal
+plt.xlim(0, max(time))  # Show two cycles of the signal
 
 # Set the y-axis limits so that the x-axis cuts at y=0.
 y_min, y_max = min(input_signal), max(input_signal)  # Calculate data limits
