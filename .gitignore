@@ -381,3 +381,4 @@ build/
 *.xlsx
 /FFTW_CPP/
 /EngineFo.a73380ba/
+/__pycache__/

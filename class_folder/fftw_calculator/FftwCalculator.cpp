@@ -2,8 +2,8 @@
 #include <fftw3.h>
 #include <cmath>
 
-FftwCalculator::FftwCalculator(int samples, const std::vector<double>& values)
-    : n(samples), values(values) {
+FftwCalculator::FftwCalculator(int n, double frequency, const std::vector<double>& values)
+    : n(n), frequency(frequency), values(values) {
 }
 
 void FftwCalculator::calculate() {
@@ -21,11 +21,13 @@ void FftwCalculator::calculate() {
     fftw_execute(p);
 
     // Calculate magnitude and normalize
+    reFftw.resize(n);
+    imFftw.resize(n);
     magnitudes.resize(n);
     for (int k = 0; k < n; ++k) {
-        double real = out[k][0]; // Real part
-        double imag = out[k][1]; // Imaginary part
-        magnitudes[k] = sqrt(real * real + imag * imag);
+        reFftw[k] = out[k][0]; // Real part
+        imFftw[k] = out[k][1]; // Imaginary part
+        magnitudes[k] = sqrt(reFftw[k] * reFftw[k] + imFftw[k] * imFftw[k]);
         magnitudes[k] = (2.0 / n) * magnitudes[k]; // Normalize
     }
 
@@ -38,7 +40,7 @@ void FftwCalculator::calculate() {
     // Generate positive frequencies
     positiveFrequencies.resize(n);
     for (int k = 0; k < n; ++k) {
-        positiveFrequencies[k] = (k <= n / 2) ? (k * 1024 / n) : ((k - n) * 1024 / n); // Frequency calculation
+        positiveFrequencies[k] = (k <= n / 2) ? (k * frequency) : ((k - n) * frequency); // Frequency calculation
     }
 
     // Free FFTW resources
@@ -47,10 +49,20 @@ void FftwCalculator::calculate() {
     fftw_free(out);
 }
 
+const std::vector<double>& FftwCalculator::getFrequencies() const {
+    return positiveFrequencies;
+}
+
 const std::vector<double>& FftwCalculator::getMagnitudes() const {
     return magnitudes;
 }
 
-const std::vector<double>& FftwCalculator::getFrequencies() const {
-    return positiveFrequencies;
+const std::vector<double>& FftwCalculator::getReFftw() const
+{
+    return reFftw;
+}
+
+const std::vector<double>& FftwCalculator::getImFftw() const
+{
+    return imFftw;
 }

@@ -1,8 +1,8 @@
 #include "SignalGenerator.h"
 #include <cmath>
 
-SignalGenerator::SignalGenerator(double amp, double freq, double ph, int samp)
-    : amplitude(amp), frequency(freq), phase(ph), n(samp) {
+SignalGenerator::SignalGenerator(double amplitude, double frequency, double phase, int n)
+    : amplitude(amplitude), frequency(frequency), phase(phase), n(n) {
 }
 
 void SignalGenerator::generate() {

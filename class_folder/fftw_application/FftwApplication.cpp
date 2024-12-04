@@ -19,7 +19,7 @@ void FftwApplication::run() {
     signalGenerator.generate();
 
     // Calculates the FFTW of the signal
-    FftwCalculator fftwCalculator(n, signalGenerator.getValues());
+    FftwCalculator fftwCalculator(n, frequency, signalGenerator.getValues());
     fftwCalculator.calculate();
 
     // Generates the txt file with the input signal data and the FFTW
@@ -27,8 +27,10 @@ void FftwApplication::run() {
     fileGenerator.saveData(signalGenerator.getSamples(),
         signalGenerator.getTime(),
         signalGenerator.getValues(),
-        fftwCalculator.getMagnitudes(),
-        fftwCalculator.getFrequencies());
+        fftwCalculator.getFrequencies(),
+        fftwCalculator.getReFftw(),
+        fftwCalculator.getImFftw(),
+        fftwCalculator.getMagnitudes());
 
     GraphicGenerator graphicGenerator(scriptPath);
     graphicGenerator.execute(n, cycles, amplitude, frequency, phase);

@@ -12,14 +12,16 @@ class SignalProcessor:
         self.phase = phase
         self.time = None
         self.values = None
+        self.frequencies = None
+        self.magnitudes = None
 
     def process_signal(self):
         """
         Process the signal: load data, extend cycles, and prepare for plotting.
         """
-        # Load data from file "C:\Users\CODER\_CPP\GraphicApplication\Debug\graph_data.txt"
+        # Load data from file "C:\Users\CODER\_CPP\GraphicApplication/Debug/fft_data.txt"
         loader = FileLoader(self.file_path)
-        self.time, self.values = loader.load_data()
+        self.time, self.values, self.frequencies, self.magnitudes = loader.load_data()
 
         # Extend cycles
         extender = SignalExtender()
@@ -29,5 +31,5 @@ class SignalProcessor:
         """
         Plot the processed signal.
         """
-        plotter = SignalPlotter(self.time, self.values, self.samples, self.cycles, self.amplitude, self.frequency, self.phase)
+        plotter = SignalPlotter(self.time, self.values, self.samples, self.cycles, self.amplitude, self.frequency, self.phase, self.frequencies, self.magnitudes)
         plotter.plot_signal()
